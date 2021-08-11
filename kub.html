@@ -1,0 +1,173 @@
+<head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/b23a20a39d.js" crossorigin="anonymous"></script>
+       
+
+</head>
+<body>
+<div class="hero">
+<div class="navbar">
+<img src="docker3.png" class="logo">
+</div>
+	<div class="content">
+		<small>Containerization Tool</small>
+		<h1>Execute Docker Commands</h1>
+	</div>
+
+
+<div class="login-box">
+   
+    <form>
+      <div class="user-box">
+        <input id="in1" type="text" name="" required="">
+        <label>input</label>
+      </div>
+      
+      <a onclick="fn()" href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Run
+      </a>
+       
+    </form>
+</div>
+
+<nbsp><nbsp><nbsp><nbsp>
+<pre>   
+<div id="d1"> roothost$ OUTPUT</div>
+</pre>
+
+
+
+
+<!-- 
+<div onclick="alert('hi')"> click here to check sync </div>
+<button id="b1" onclick="lw()"> click </button> -->
+
+
+<body >
+    <!-- <pre> -->
+
+        <script>
+        function showpods()
+        {
+        
+        var xhr=new XMLHttpRequest();
+        
+        
+        xhr.open("GET","http://192.168.101.5/cgi-bin/python.py?x=kubectl get pods --kubeconfig admin.conf",true);
+        xhr.send();
+        
+        xhr.onload=function (){
+        var output=xhr.responseText;
+        document.getElementById("d1").innerHTML=output;
+                      }
+        }
+        function launchpods()
+        {
+        
+        var xhr=new XMLHttpRequest();
+        i=document.getElementById("in2").value;
+        j=document.getElementById("in3").value;
+        
+        xhr.open("GET","http://192.168.101.5/cgi-bin/python.py?x=kubectl create deployment "+i+" --image="+j+" --kubeconfig admin.conf",true);
+        xhr.send();
+        
+        xhr.onload=function (){
+        var output=xhr.responseText;
+        document.getElementById("d1").innerHTML=output;
+                      }
+        }
+        function exposeservices()
+        {
+        
+        var xhr=new XMLHttpRequest();
+        i=document.getElementById("in4").value;
+        
+        xhr.open("GET","http://192.168.101.5/cgi-bin/python.py?x=kubectl expose deployment "+i+" --port=80 --type=NodePort --kubeconfig admin.conf",true);
+        xhr.send();
+        
+        xhr.onload=function (){
+        var output=xhr.responseText;
+        document.getElementById("d1").innerHTML=output;
+                      }
+        }
+        function scalereplica()
+        {
+        
+        var xhr=new XMLHttpRequest();
+        i=document.getElementById("in5").value;
+        j=document.getElementById("in6").value;
+        
+        xhr.open("GET","http://192.168.101.5/cgi-bin/python.py?x=kubectl scale deployment "+j+" --replicas="+i+" --kubeconfig admin.conf",true);
+        xhr.send();
+        
+        xhr.onload=function (){
+        var output=xhr.responseText;
+        document.getElementById("d1").innerHTML=output;
+                      }
+        }
+        
+        function runpod()
+        {
+        
+        var xhr=new XMLHttpRequest();
+        i=document.getElementById("in7").value;
+        j=document.getElementById("in8").value;
+        
+        xhr.open("GET","http://192.168.101.5/cgi-bin/python.py?x=kubectl run "+i+" --image="+j+" --kubeconfig admin.conf",true);
+        xhr.send();
+        
+        xhr.onload=function (){
+        var output=xhr.responseText;
+        document.getElementById("d1").innerHTML=output;
+                      }
+        }
+        
+        
+        function deleteall()
+        {
+        
+        var xhr=new XMLHttpRequest();
+        
+        
+        xhr.open("GET","http://192.168.101.5/cgi-bin/python.py?x=kubectl delete --all all --kubeconfig admin.conf",true);
+        xhr.send();
+        
+        xhr.onload=function (){
+        var output=xhr.responseText;
+        document.getElementById("d1").innerHTML=output;
+                      }
+        }
+        
+        function deletepod()
+        {
+        
+        var xhr=new XMLHttpRequest();
+        
+        i=document.getElementById("in9").value;
+        xhr.open("GET","http://192.168.101.5/cgi-bin/python.py?x=kubectl delete deployment "+i+" --kubeconfig admin.conf",true);
+        xhr.send();
+        
+        xhr.onload=function (){
+        var output=xhr.responseText;
+        document.getElementById("d1").innerHTML=output;
+                      }
+        }
+        
+        
+        </script>
+
+
+<!--
+[root@local~#]
+</style>
+<div class="search-box">
+            <input id="in1" class="search-txt" type="text" name="" placeholder="Type to search">
+            <a onclick="lw()" class="search-btn" href="#">
+                <i class="fas fa-terminal"></i>
+            </a>
+</div>
